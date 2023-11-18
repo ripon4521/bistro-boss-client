@@ -5,7 +5,7 @@ const BistroBoss = () => {
         <div className="my-[90px]  ">
             <h1 className='text-6xl my-10 text-yellow-400 text-center font-inter font-semibold drop-shadow-lg'>Chef Service</h1>
            
-           <div className="hero mx-auto h-[572px] w-[1320px] " style={{backgroundImage: `url(${cheif})`} }>
+           <div className="hero mx-auto h-[572px] w-[1320px] " >
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-center text-neutral-content">
     <div className="w-[1096px] h-[334px] bg-white items-center  ">

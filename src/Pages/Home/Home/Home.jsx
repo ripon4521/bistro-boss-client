@@ -3,7 +3,9 @@ import Banner from "../Banner/Banner";
 import BistroBoss from "../BistroBoss/BistroBoss";
 
 import Categeory from "../Categeory/Categeory";
+import Feauters from "../Feautres/Feauters";
 import FromMeanu from "../FromMeanu/FromMeanu";
+import Recomondetion from "../Recomondetion/Recomondetion";
 
 
 const Home = () => {
@@ -14,6 +16,8 @@ const Home = () => {
     <BistroBoss></BistroBoss>
     <FromMeanu></FromMeanu>
     <CallUs></CallUs>
+    <Recomondetion></Recomondetion>
+    <Feauters></Feauters>
    
         </div>
     );
