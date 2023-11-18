@@ -6,6 +6,7 @@ import Categeory from "../Categeory/Categeory";
 import Feauters from "../Feautres/Feauters";
 import FromMeanu from "../FromMeanu/FromMeanu";
 import Recomondetion from "../Recomondetion/Recomondetion";
+import Testimoniyels from "../Testimoniels/Testimoniyels";
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
     <CallUs></CallUs>
     <Recomondetion></Recomondetion>
     <Feauters></Feauters>
+    <Testimoniyels></Testimoniyels>
    
         </div>
     );
