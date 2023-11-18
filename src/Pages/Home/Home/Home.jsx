@@ -1,3 +1,4 @@
+import CallUs from "../../../components/SectionTitle/CallUs/CallUs";
 import Banner from "../Banner/Banner";
 import BistroBoss from "../BistroBoss/BistroBoss";
 
@@ -12,6 +13,7 @@ const Home = () => {
     <Categeory></Categeory>
     <BistroBoss></BistroBoss>
     <FromMeanu></FromMeanu>
+    <CallUs></CallUs>
    
         </div>
     );
