@@ -1,17 +1,32 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
 
+
 const navlink = 
 <>
-        <li ><Link className=" px-3 py-2 rounded font-inter text-xl font-semibold hover:bg-yellow-400">Home</Link></li>
-        <li ><Link className="  px-3 py-2 rounded font-inter text-xl font-semibold hover:bg-yellow-400">Contact Us</Link></li>
-        <li ><Link className=" px-3 py-2 rounded  font-inter text-xl font-semibold hover:bg-yellow-400">Dashboard</Link></li>
-        <li ><Link to="/meanu"   className=" px-3 py-2 rounded font-inter text-xl font-semibold hover:bg-yellow-400">Our Meanu</Link></li>
-        <li ><Link className="  px-3 py-2 rounded font-inter text-xl font-semibold hover:bg-yellow-400">Our Shop</Link></li>
-        <li ><Link className="  px-3 py-2 rounded font-inter text-xl font-semibold hover:bg-yellow-400">My cart</Link></li>
-</>
+<NavLink  to="/"  className={({ isActive }) =>
+                    isActive ? "  font-inter text-xl font-semibold  text-yellow-400" : "text-white font-inter text-xl"
+                  } >Home</NavLink>
+
+<NavLink to="/contacts"  className={({ isActive }) =>
+                    isActive ? "  font-inter text-xl font-semibold  text-yellow-400" : "text-white font-inter text-xl"
+                  } >Contact Us</NavLink>
+<NavLink  to="/contact" className={({ isActive }) =>
+                    isActive ? "  font-inter text-xl font-semibold  text-yellow-400" : "text-white font-inter text-xl"
+                  } >Dashboard</NavLink>
+<NavLink to="/meanu" className={({ isActive }) =>
+                    isActive ? " font-inter text-xl font-semibold  text-yellow-400" : "text-white font-inter text-xl"
+                  } >Our Meanu</NavLink>
+<NavLink to="/order/Salad"  className={({ isActive }) =>
+                    isActive ? "  font-inter text-xl font-semibold text-yellow-400" : " font-inter text-xl text-white"
+                  } >Our Shop</NavLink>
+                  <NavLink to="/mycart" className={({ isActive }) =>
+                    isActive ? "  font-inter text-xl font-semibold  text-yellow-400" : "text-white font-inter text-xl"
+                  } >My Cart</NavLink>
+    
+</>           
 
 
     return (
@@ -36,13 +51,14 @@ const navlink =
   </div>
 
   <div className="navbar-center  hidden lg:flex">
-    <ul className=" flex gap-3   ">
+    <ul className="  flex  gap-5  ">
     {navlink}
+  
     </ul>
   </div>
 
 
-  <div className="ml-28 md:ml-56 lg:ml-0 ">
+  <div className="ml-28 md:ml-56 lg:ml-3 ">
   <button className="btn btn-warning bg-yellow-400">Sign Out</button>
   </div>
 </div>
