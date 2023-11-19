@@ -49,7 +49,7 @@ const Testimoniyels = () => {
                 </p>
 
 
-                    <img className="mx-auto my-10" src={img} alt="" />
+                    <img className="mx-auto my-10 " src={img} alt="" />
 
                    
                     <p className="text-center font-inter">{item.details}</p>

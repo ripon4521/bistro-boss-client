@@ -1,15 +1,16 @@
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
 
 const navlink = 
 <>
-        <li  ><a className="font-inter text-xl font-semibold hover:bg-yellow-400">Home</a></li>
-        <li ><a className=" font-inter text-xl font-semibold hover:bg-yellow-400">Contact Us</a></li>
-        <li ><a className=" font-inter text-xl font-semibold hover:bg-yellow-400">Dashboard</a></li>
-        <li ><a className=" font-inter text-xl font-semibold hover:bg-yellow-400">Our Meanu</a></li>
-        <li ><a className=" font-inter text-xl font-semibold hover:bg-yellow-400">Our Shop</a></li>
-        <li ><a className=" font-inter text-xl font-semibold hover:bg-yellow-400">My cart</a></li>
+        <li ><Link className=" px-3 py-2 rounded font-inter text-xl font-semibold hover:bg-yellow-400">Home</Link></li>
+        <li ><Link className="  px-3 py-2 rounded font-inter text-xl font-semibold hover:bg-yellow-400">Contact Us</Link></li>
+        <li ><Link className=" px-3 py-2 rounded  font-inter text-xl font-semibold hover:bg-yellow-400">Dashboard</Link></li>
+        <li ><Link to="/meanu"   className=" px-3 py-2 rounded font-inter text-xl font-semibold hover:bg-yellow-400">Our Meanu</Link></li>
+        <li ><Link className="  px-3 py-2 rounded font-inter text-xl font-semibold hover:bg-yellow-400">Our Shop</Link></li>
+        <li ><Link className="  px-3 py-2 rounded font-inter text-xl font-semibold hover:bg-yellow-400">My cart</Link></li>
 </>
 
 
@@ -34,8 +35,8 @@ const navlink =
    </div>
   </div>
 
-  <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 ">
+  <div className="navbar-center  hidden lg:flex">
+    <ul className=" flex gap-3   ">
     {navlink}
     </ul>
   </div>
