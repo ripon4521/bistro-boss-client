@@ -9,10 +9,11 @@ import soupBg from "../../../assets/menu/soup-bg.jpg"
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import useMeanu from '../../../Hooks/UseMeanu';
 import MeanuCategeroy from '../MeanuCategeroy/MeanuCategeroy';
+import { useEffect } from 'react';
 
 
 const Meanu = () => {
-
+    useEffect(() => { window.scrollTo(0, 0) }, [])
 
     const [meanu]=useMeanu();
     const offered = meanu.filter(item=> item.category == 'offered')
@@ -22,6 +23,8 @@ const Meanu = () => {
     const soup = meanu.filter(item=> item.category == 'soup')
 
     return (
+
+        
         <div>
             <Helmet >
                 <title>Bistro Boss || Meanu</title>

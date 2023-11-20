@@ -8,9 +8,12 @@ import Feauters from "../Feautres/Feauters";
 import FromMeanu from "../FromMeanu/FromMeanu";
 import Recomondetion from "../Recomondetion/Recomondetion";
 import Testimoniyels from "../Testimoniels/Testimoniyels";
+import { useEffect } from "react";
+// import { useEffect } from "react";
 
 
 const Home = () => {
+    useEffect(() => { window.scrollTo(0, 0) }, [])
     return (
         <div>
             <Helmet>

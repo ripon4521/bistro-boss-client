@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import orderCover from "../../../assets/shop/banner2.jpg"
 import Cover from "../../Shared/Cover/Cover";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import useMeanu from "../../../Hooks/UseMeanu";
-import OrderCard from "../OrderCard/OrderCard";
+// import OrderCard from "../OrderCard/OrderCard";
 import OrderTabs from "../OrderTabs/OrderTabs";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 const Order = () => {
+    useEffect(() => { window.scrollTo(0, 0) }, [])
     const categories = ['Salad','Pizza','Soup','Dessert','Drinks']
     const [meanu]=useMeanu();
     const {category} = useParams()
