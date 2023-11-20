@@ -5,7 +5,7 @@ const useMeanu = () => {
     const[meanu , setMeanu]= useState([]);
     const [loading,setLoading]=useState(true)
     useEffect(()=>{
-       fetch('meanu.json')
+       fetch('http://localhost:5000/menu')
         .then(res=>res.json())
         .then(data=>{
             // const popularItem = data.filter(item=> item.category == 'popular')

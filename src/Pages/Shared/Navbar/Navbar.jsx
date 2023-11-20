@@ -59,7 +59,7 @@ const navlink =
 
 
   <div className="ml-28 md:ml-56 lg:ml-3 ">
-  <button className="btn btn-warning bg-yellow-400">Sign Out</button>
+<Link to="/login">  <button className="btn btn-warning bg-yellow-400">Sign Out</button></Link>
   </div>
 </div>
         </div>
