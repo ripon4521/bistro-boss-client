@@ -1,5 +1,5 @@
 const MeanuItem = ({item}) => {
-    console.log(item);
+    // console.log(item);
     const {image,price,name,recipe}=item;
     return (
         <div className="flex   ">

@@ -19,7 +19,7 @@ const Testimoniyels = () => {
         .then(res=>res.json())
         .then(data=>{
             setReview(data)
-            console.log(data);
+            // console.log(data);
         })
     },[])
     return (

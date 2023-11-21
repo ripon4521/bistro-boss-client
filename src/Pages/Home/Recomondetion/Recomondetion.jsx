@@ -22,7 +22,7 @@ const Recomondetion = () => {
             >
 
             </SectionTitle>
-            <div className="my-10 mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-10 md:grid-cols-2">
+            <div className="my-10 p-7 md:p-3 lg:p-0 mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-10 md:grid-cols-2">
             {
                 recomn.slice(9,12).map(item=><RecomondoCard key={item._id} item={item}></RecomondoCard>)
             }

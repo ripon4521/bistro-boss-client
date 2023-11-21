@@ -9,6 +9,9 @@ import Login from "../Pages/Login/Login/Login";
 import SighnUp from "../Pages/SighnUp/SighnUp";
 import Scret from "../Pages/Shared/Scret/Scret";
 import Private from "./Private/Private";
+import Dashborad from "../Layout/Dashborad";
+import Cart from "../Pages/Dashboard/Cart/Cart";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
   export const router = createBrowserRouter([
     {
@@ -39,4 +42,21 @@ import Private from "./Private/Private";
       }
       ]
     },
+    {
+      path:"/dashboard",
+      element:<Private><Dashborad></Dashborad></Private>,
+      children:[
+        {
+          path:"cart",
+          element:<Cart></Cart>
+        },
+        // admin
+        {
+          path:"users",
+          element:<AllUsers></AllUsers>
+        }
+
+      ]
+
+    }
   ]);

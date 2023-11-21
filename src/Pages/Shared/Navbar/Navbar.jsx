@@ -3,11 +3,16 @@ import { useContext } from "react";
 import { AuthContext } from "../../../providers/Authprovider";
 import userImg from "../../../assets/icon/icon-5359553_1280-removebg-preview.png";
 import toast, { Toaster } from "react-hot-toast";
+import { MdShoppingCart
+} from 'react-icons/md';
+import useCart from "../../../Hooks/useCart";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
+const [cart] = useCart();
+// console.log(cart);
 
-  console.log(user);
+  // console.log(user);
   const handleLogout = () => {
     logout().then((result) => {
       toast.success("Log Out SuccessFull", {
@@ -71,22 +76,24 @@ const Navbar = () => {
       >
         Our Shop
       </NavLink>
-      <NavLink
-        to="/mycart"
+      <NavLink 
+        to="/dashboard/cart"
         className={({ isActive }) =>
           isActive
             ? "  font-inter text-xl font-semibold  text-yellow-400"
             : "text-white font-inter text-xl"
         }
       >
-        My Cart
+ 
+<span className="text-3xl flex flex-row-reverse md:mr-40 mr-40 lg:mr-0 ">
+<div className="badge  bg-orange-500  rounded-full text-white text-xs">+{cart?.length}</div> <MdShoppingCart></MdShoppingCart></span>
       </NavLink>
     </>
   );
 
   return (
     <div>
-      <div className="navbar p-5 fixed z-10 bg-opacity-50 text-white container bg-black">
+      <div className="navbar p-2 fixed z-10 bg-opacity-50 text-white container bg-black">
         <div className="navbar-start">
           <div className="dropdown">
             <label
@@ -110,7 +117,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-yellow-400 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52"
             >
               {navlink}
             </ul>
@@ -127,12 +134,12 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-center  hidden lg:flex">
-          <ul className="  flex  gap-5  ">{navlink}</ul>
+          <ul className="  flex items-center  gap-5  ">{navlink}</ul>
         </div>
 
         <div className="ml-28 md:ml-56 lg:ml-3 ">
           {user ? (
-            <Link>
+           
               <div>
                 <div className="dropdown dropdown-end">
                   <label
@@ -163,7 +170,7 @@ const Navbar = () => {
                   </ul>
                 </div>
               </div>
-            </Link>
+        
           ) : (
             <Link to="/login">
               {" "}

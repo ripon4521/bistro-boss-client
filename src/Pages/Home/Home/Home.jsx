@@ -15,7 +15,7 @@ import { useEffect } from "react";
 const Home = () => {
     useEffect(() => { window.scrollTo(0, 0) }, [])
     return (
-        <div>
+        <div className="">
             <Helmet>
                 <title>Bistro Boss || Home</title>
             </Helmet>
@@ -27,7 +27,8 @@ const Home = () => {
     <CallUs></CallUs>
     <Recomondetion></Recomondetion>
     <Feauters></Feauters>
-    <Testimoniyels></Testimoniyels>
+    <Testimoniyels></Testimoniyels> 
+   
    
         </div>
     );

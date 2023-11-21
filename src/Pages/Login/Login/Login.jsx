@@ -14,6 +14,7 @@ import fb from "../../../assets/Login/fb_icon_325x325-removebg-preview.png";
 import google from "../../../assets/Login/q8-vPggS_400x400-removebg-preview.png";
 import github from "../../../assets/Login/GitHub-Mark-ea2971cee799-removebg-preview.png";
 import toast, { Toaster } from "react-hot-toast";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 
 const Login = () => {
   // const ref = useRef(null);
@@ -22,7 +23,8 @@ const Login = () => {
   const { sighnIn, googleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname|| '/'
+  const from = location.state?.from?.pathname|| '/';
+  const  axiosPublic = useAxiosPublic();
   // Capctha
   useEffect(() => {
     loadCaptchaEnginge(6);
@@ -48,7 +50,7 @@ const Login = () => {
         navigate(from ,{replace:true});
       })
       .catch((error) => {
-        toast.warning("Log Out SuccessFull", {
+        toast.error(error.message, {
           duration: 5000,
         });
         const errorMessage = error.message;
@@ -73,10 +75,17 @@ const Login = () => {
   const handleGoogleLogin = () => {
     googleLogin()
       .then((result) => {
+
+
         toast.success("Login SuccessFull", {
-          duration: 5000,
-        });
-        console.log(result);
+          duration: 5000,});
+          const userinfo ={
+            email: result.user?.email,
+            name: result.user?.displayName
+          }
+          axiosPublic.post('/users',userinfo)
+          .then(res=>console.log(res))
+    
         navigate(from ,{replace:true});
 
       })

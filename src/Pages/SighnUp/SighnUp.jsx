@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/Authprovider";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 
 
@@ -16,50 +17,42 @@ const SighnUp = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname|| '/'
+  const axiospublic = useAxiosPublic()
 
   const onSubmit = (data) => {
-    console.log(data)
-    createUser(data.email, data.password)
-    .then(result=>{
-      console.log(result.user);
-      updateuserProfile(data.name , data.photoURL)
-      .then(result=>{
-        console.log(result);
-        reset
+      createUser(data.email, data.password)
+        .then(result=>{
+          toast.success("User Create  SuccessFull", {
+            duration: 5000,
+          });
+           console.log(result.user);
+            updateuserProfile(data.name , data.photoURL)
+        .then(result=>{
+      
+// Create User Enty in Datavase  
+        const userInfo = {
+      name:data.name ,
+      email:data.email
+    }
+ axiospublic.post('/users',userInfo)
+ .then(res=>{
+  if (res.data.insertedId) {
+    reset()
+    toast.success("User Create  SuccessFull", {
+      duration: 5000,
+    });
+        
+    navigate(from ,{replace:true});
+  }
+ })
 
-        toast.success("User Create  SuccessFull", {
-          duration: 5000,
-        });
-        navigate(from ,{replace:true});
-      })
-      .catch(err=>console.log(err.message))
+})
+
+.catch(err=>console.log(err.message))
     })
   }; 
 
 
-  
-
-    // const handlesubmit =(event)=>{
-    //     event.preventDefault();
-    //     const from = event.target;
-    //     const email = from.email.value;
-    //     const name = from.name.value;
-    //     const password = from.password.value;
-    //     console.log(email , password,name);
-    //     createUser(email , password,name)
-    //     .then((userCredential) => {
-    //         // Signed in 
-    //         const result = userCredential.user;
-    //         console.log(result);
-    //         return alert('SignUp SuccesFull')
-    //       })
-    //       .catch((error) => {
-    //         const errorMessage = error.message;
-    //         console.log(errorMessage);
-    //       });
-
-    // }
-    
 
     return (
         <div>

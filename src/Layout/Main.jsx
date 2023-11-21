@@ -9,7 +9,7 @@ const Main = () => {
     const noheaderFooters = location.pathname.includes('register' )
     return (
         <div>
-            <div>
+            <div className="container mx-auto"> 
                { noheaderFooter || noheaderFooters || <Navbar></Navbar>}
                 <Outlet></Outlet>
                 {noheaderFooters|| noheaderFooter || <Footer></Footer>}
